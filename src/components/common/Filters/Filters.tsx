@@ -78,10 +78,10 @@ const Sidebar = () => {
       )}
       {isSmallScreen && (
         <div
-          className="w-full py-2 flex items-center justify-between"
+          className="w-full py-3 flex items-center justify-between"
           onClick={() => setVisibleFilter(!isVisibleFilter)}
         >
-          <div className="flex items-center space-x-4 text-primary-500 font-bold mr-4 mb-2">
+          <div className="flex items-center space-x-4 text-primary-500 font-bold">
             <span>{isVisibleFilter ? "Hide Filters" : "Show Filters"}</span>
             {isVisibleFilter ? <FiChevronUp /> : <FiChevronDown />}
           </div>
