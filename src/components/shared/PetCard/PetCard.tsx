@@ -1,9 +1,7 @@
 import { IPet } from "@/types/types";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { FiEdit3, FiEye } from "react-icons/fi";
 
 interface IProps {
   pet: IPet;
@@ -24,7 +22,7 @@ const PetCard: FC<IProps> = ({ pet }) => {
 
   return (
     <div
-      className="w-full h-60 laptop:h-94 relative text-white"
+      className="w-full h-60 laptop:h-94 relative text-white cursor-pointer"
       onClick={() => router.push(`/pet/${pet._id}`)}
     >
       <div className="w-full h-90% relative group">
