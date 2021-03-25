@@ -59,18 +59,20 @@ const SearchBar = () => {
           )}
         </>
       )}
-      {isSmallScreen && hiddenTo.includes(router.pathname) ? null : (
-        <div className="flex space-x-6 items-center">
-          <FiSearch
-            className="text-xl text-gray-500"
-            onClick={() => setOpen(true)}
-          />
-          <FiPlusCircle
-            className="text-xl text-primary-500"
-            onClick={() => router.push("/new")}
-          />
-        </div>
-      )}
+      {hiddenTo.includes(router.pathname)
+        ? null
+        : isSmallScreen && (
+            <div className="flex space-x-6 items-center laptop:hidden">
+              <FiSearch
+                className="text-xl text-gray-500"
+                onClick={() => setOpen(true)}
+              />
+              <FiPlusCircle
+                className="text-xl text-primary-500"
+                onClick={() => router.push("/new")}
+              />
+            </div>
+          )}
       {isSmallScreen && isOpen && (
         <div className="fixed top-0 left-0 w-full h-14 bg-white z-10 px-4 flex items-center">
           <FiChevronLeft
